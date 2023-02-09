@@ -20,7 +20,7 @@ services:
     volumes:
       - volume-postgresql:/var/lib/postgresql/data
     environment:
-      POSTGRES_PASSWORD: toor
+      POSTGRES_PASSWORD: ${POSTGRE_PWD}
   pgadmin:
     container_name: pgadmin
     image: dpage/pgadmin4:6.17
@@ -31,5 +31,5 @@ services:
     depends_on:
       - postgresql
     environment:
-      PGADMIN_DEFAULT_EMAIL: root@root.com
-      PGADMIN_DEFAULT_PASSWORD: toor
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PWD}
